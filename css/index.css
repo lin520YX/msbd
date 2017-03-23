@@ -1,0 +1,109 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+p {
+	line-height: 1.8em;
+}
+
+a {
+	text-decoration: none;
+}
+
+.page {
+	margin: 0 auto;
+}
+
+
+/*type.html*/
+
+.type_grid div {
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	border: 1px solid #333;
+}
+
+.type_grid img {
+	width: 100%;
+}
+
+.text_center {
+	text-align: center;
+}
+
+.EditType {
+	padding: 5px;
+}
+
+
+/*panel*/
+
+.ui-panel-inner {
+	padding: 0;
+}
+
+/*typedetail.html*/
+
+.listview{
+	margin: 1em 1em 0 1em;
+	position: relative;
+}
+
+ .Indexlistview{
+ 	margin: 1em 1em 0 1em;
+	position: relative;
+ }
+
+.listview hr {
+	color: #404040;
+	margin: 0.5em 0;
+}
+
+.commentNum {
+	text-align: right;
+}
+
+.ListquestionType{
+	color: #e4393c;
+	font-size: 1em;
+	display: block;
+}
+
+/*detail*/
+
+.name{
+	color: #3388CC;
+}
+
+#commentList li{
+	margin: 1em 0;
+	position: relative;
+}
+
+.commentPraise{
+	position:absolute;
+	right: 0;
+	bottom: 0;
+	border:1px solid #AAAAAA;
+	border-radius: 0.4em;
+	color: white;
+	padding: 0.2em;
+	background: #e4393c;
+}
+
+
+/*myCollect*/
+.deleteCollectBtn{
+	display: none;
+	position: absolute;
+	right: 1em;	
+	color: #e4393c;
+}
+

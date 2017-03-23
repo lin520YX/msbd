@@ -1,0 +1,37 @@
+<div data-role="page" ng-controller="detailCtrl">
+	<div data-role="header" data-position="fixed">
+		<a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back ui-btn-icon-notext"></a>
+		<h1>详情</h1>
+	</div>
+
+	<div data-role="content">
+		<h3 id="qid" style="display: none;"></h3>
+		<h3 id="question"></h3>
+		<br />
+		<p id="answer"></p>
+		<br />
+		<p id="trueAnswer"></p>
+		<hr style="margin: 0.5em 0;"/>
+		<ul id="commentList">
+			<!--<li>
+				<span><b id="name"></b>:<span id="say"></span></span>
+			</li>-->
+			<li style="display: none;"></li>
+		</ul>
+		<button ng-click="moreComment()" style="display: none;" id="BtnMoreComment">更多评论</button>
+	</div>
+
+	<div data-role="footer" data-position="fixed" class="ui-footer-fixed">
+		<table width="100%">
+			<tr>
+				<td>
+					<input type="text" placeholder="输入评论" id="myComment">
+				</td>
+				<td>
+					<button ng-click="sendComment()" style="width: 100%;">发送</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</div>

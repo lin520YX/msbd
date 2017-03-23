@@ -1,0 +1,32 @@
+<div data-role="page">
+	<div data-role="header" data-position="fixed">
+		<a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back ui-btn-icon-notext"></a>
+		<h1>{{typeDetail}}</h1>
+	</div>
+
+	<div data-role="content" ng-controller="typeDetailCtrl">
+		<!--搜索框-->
+		<!--<table width="100%">
+			<tr>
+				<td>
+					<input type="text" data-type="search">
+				</td>
+				<td>
+					<a href="" class="ui-btn">搜索</a>
+				</td>
+			</tr>
+		</table>-->
+
+		<div class="listview">
+
+			<ul data-role="listview">
+
+			</ul>
+
+		</div>
+
+		<button id="btnGetMore" style="margin-top: 2em;" ng-click="readMore()">查看更多</button>
+
+	</div>
+
+</div>

@@ -1,0 +1,13 @@
+<div data-role="page" ng-controller="userInfoCtrl">
+	<div data-role="header" data-position="fixed">
+		<a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back ui-btn-icon-notext"></a>
+		<h1>个人信息</h1>
+	</div>
+
+	<div data-role="content">
+		<p>用户名：<span ng-bind="userInfo.username"></span></p>
+		<input type="text" placeholder="输入新的用户名" id="newUserName" />
+		<button ng-click="changeName()">确定</button>
+	</div>
+
+</div>

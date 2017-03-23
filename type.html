@@ -1,0 +1,119 @@
+<div data-role="page">
+
+	<!--panel-->
+	<div data-role="panel" id="mypanel" data-display="overlay" style="padding: 0">
+
+		<!--用户头像-->
+		<div class="text_center" style="background: url('img/panel_bg.jpg')">
+			<img src="img/user.png">
+			<p id="panel_username" ng-bind="userInfo.username"></p>
+		</div>
+
+		<!--设置列表-->
+		<div>
+			<ul data-role="listview" data-inset="true" data-divider-theme="a">
+				<!--<li data-role="list-divider">个人</li>-->
+				<li>
+					<a href="#" ng-click="toUserInfo()">个人信息</a>
+				</li>
+				<li>
+					<a href="#" ng-click="toMyCollect()">我的收藏</a>
+				</li>
+				<li>
+					<a href="#" ng-click="toAbout()">关于</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!--页头-->
+	<div data-role="header" data-position="fixed">
+		<a href="#mypanel" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user ui-btn-icon-notext"></a>
+		<h1>分类</h1>
+	</div>
+
+	<div data-role="content" ng-controller="typeCtrl">
+
+		<div id="type_table">
+
+			<div class="ui-grid-b type_grid">
+
+				<div class="ui-block-a" ng-click="toTypeDetail('iv_html')">
+					<p><b>html</b></p>
+					<img src="img/code.png">
+				</div>
+				<div class="ui-block-b" ng-click="toTypeDetail('iv_css')">
+					<p><b>css</b></p>
+					<img src="img/code.png">
+
+				</div>
+				<div class="ui-block-c" ng-click="toTypeDetail('iv_js')">
+					<p><b>javascript</b></p>
+					<img src="img/code.png">
+
+				</div>
+
+			</div>
+
+			<div class="ui-grid-b type_grid">
+
+				<div class="ui-block-a" ng-click="toTypeDetail('iv_jq')">
+					<p><b>jquery</b></p>
+					<img src="img/code.png">
+
+				</div>
+				<div class="ui-block-b" ng-click="toTypeDetail('iv_bootstrap')">
+					<p><b>Bootstrap</b></p>
+					<img src="img/code.png">
+
+				</div>
+				<div class="ui-block-c" ng-click="toTypeDetail('iv_angular')">
+					<p><b>AngularJS</b></p>
+					<img src="img/code.png">
+
+				</div>
+
+			</div>
+
+			<div class="ui-grid-b type_grid">
+
+				<div class="ui-block-a" ng-click="toTypeDetail('iv_vue')">
+					<p><b>Vue.js</b></p>
+					<img src="img/code.png">
+
+				</div>
+				<div class="ui-block-b" ng-click="toTypeDetail('iv_react')">
+					<p><b>React.JS</b></p>
+					<img src="img/code.png">
+
+				</div>
+				<div class="ui-block-c" ng-click="toTypeDetail('iv_other')">
+					<p><b>Other</b></p>
+					<img src="img/code.png">
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	<!--页脚-->
+	<div data-role="footer" data-position="fixed" class="ui-footer-fixed">
+		<div data-role="navbar">
+			<ul>
+				<li>
+					<a href="#" data-icon="home" ng-click="toMain()"></a>
+				</li>
+				<li>
+					<a href="#" data-icon="grid" style="background: #3388cc" ng-click="toType()"></a>
+				</li>
+				<li>
+					<a href="#" data-icon="edit" ng-click="toEdit()"></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>

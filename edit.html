@@ -1,0 +1,175 @@
+<div data-role="page">
+
+	<!--panel-->
+	<div data-role="panel" id="mypanel" data-display="overlay" style="padding: 0">
+
+		<!--用户头像-->
+		<div class="text_center" style="background: url('img/panel_bg.jpg')">
+			<img src="img/user.png">
+			<p id="panel_username" ng-bind="userInfo.username"></p>
+		</div>
+
+		<!--设置列表-->
+		<div>
+			<ul data-role="listview" data-inset="true" data-divider-theme="a">
+				<!--<li data-role="list-divider">个人</li>-->
+				<li>
+					<a href="#" ng-click="toUserInfo()">个人信息</a>
+				</li>
+				<li>
+					<a href="#" ng-click="toMyCollect()">我的收藏</a>
+				</li>
+				<li>
+					<a href="#" ng-click="toAbout()">关于</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!--页头-->
+	<div data-role="header" data-position="fixed">
+		<a href="#mypanel" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user ui-btn-icon-notext"></a>
+
+		<h1>录入</h1>
+	</div>
+
+	<div data-role="content" ng-controller="EditCtrl">
+
+		<!--类型-->
+		<select name="qtype" name="type" id="qtype">
+			<option value="iv_html">html</option>
+			<option value="iv_css">css</option>
+			<option value="iv_js">javascript</option>
+			<option value="iv_jq">jquery</option>
+			<option value="iv_bootstrap">bootstrap</option>
+			<option value="iv_angular">angular</option>
+			<option value="iv_vue">vue</option>
+			<option value="iv_react">react</option>
+			<option value="iv_other">other</option>
+		</select>
+
+		<!--题型-->
+		<div data-role="navbar">
+			<ul>
+				<li>
+					<a href="#" class="ui-btn-active" ng-click="edit_type('sim')">单选</a>
+				</li>
+				<li>
+					<a href="#" ng-click="edit_type('mut')">多选</a>
+				</li>
+				<li>
+					<a href="#" ng-click="edit_type('sian')">简答</a>
+				</li>
+			</ul>
+		</div>
+
+		<!--单选-->
+		<div id="sim">
+
+			<form>
+
+				<input type="text" placeholder="题目" id="simTitle">
+
+				<table border="0" width="100%" id="simTable">
+					<thead>
+						<td>选项</td>
+						<td>答案</td>
+					</thead>
+					<tr>
+						<td>
+							<input class="simAns" type="text" placeholder="选项1">
+						</td>
+						<td>
+							<input class="simAns_radio" type="radio" value="1" name="simRadio">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="simAns" type="text" placeholder="选项2">
+						</td>
+						<td>
+							<input class="simAns_radio" type="radio" value="2" name="simRadio">
+						</td>
+					</tr>
+				</table>
+
+				<button class="ui-btn ui-icon-plus ui-btn-icon-left" ng-click="SimaddItem()">添加选项</button>
+				<button class="ui-btn ui-icon-plus ui-btn-icon-left" ng-click="SimdelItem()">删除选项</button>
+				<button class="smBtn ui-btn" ng-click="SimSubmit()">提交</button>
+
+			</form>
+
+		</div>
+
+		<!--多选-->
+		<div id="mut" style="display: none">
+
+			<form>
+
+				<input type="text" placeholder="题目" id="mutTitle">
+
+				<table border="0" width="100%" id="mutTable">
+					<thead>
+						<td>选项</td>
+						<td>答案</td>
+					</thead>
+					<tr>
+						<td>
+							<input class="mutAns" type="text" placeholder="选项1">
+						</td>
+						<td>
+							<input class="mutAns_che" type="checkbox" value="1" name="mutCheck">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="mutAns" type="text" placeholder="选项2">
+						</td>
+						<td>
+							<input class="mutAns_che" type="checkbox" value="2" name="mutCheck">
+						</td>
+					</tr>
+				</table>
+
+				<button class="ui-btn ui-icon-plus ui-btn-icon-left" ng-click="MutaddItem()">添加选项</button>
+				<button class="ui-btn ui-icon-plus ui-btn-icon-left" ng-click="MutdelItem()">删除选项</button>
+				<button class="ui-btn" ng-click="MutSubmit()">提交</button>
+
+			</form>
+
+		</div>
+
+		<!--简答-->
+		<div id="sian" style="display: none">
+
+			<form>
+
+				<input type="text" placeholder="题目" id="sianTitle">
+				<textarea name="" id="sianAns" cols="30" rows="10" placeholder="答案"></textarea>
+
+				<button class="ui-btn" ng-click="SianSubmit()">提交</button>
+
+			</form>
+
+		</div>
+
+	</div>
+	<!--页脚-->
+	<div data-role="footer" data-position="fixed" class="ui-footer-fixed">
+		<div data-role="navbar">
+			<ul>
+				<li>
+					<a href="#" data-icon="home" ng-click="toMain()"></a>
+				</li>
+				<li>
+					<a href="#" data-icon="grid" ng-click="toType()"></a>
+				</li>
+				<li>
+					<a href="#" data-icon="edit" style="background: #3388cc" ng-click="toEdit()"></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html ng-app="parentModule">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title></title>
+	</head>
+
+	<link rel="stylesheet" type="text/css" href="tools/jqm/jquery.mobile-1.4.5.css" />
+	<link rel="stylesheet" href="css/index.css">
+
+	<body ng-controller="parentCtrl" ng-swipe-right="showPanel()">
+
+		<!--page-->
+		<div data-role="page">
+
+			<!--panel-->
+			<div data-role="panel" id="mypanel" data-display="overlay" style="padding: 0">
+
+				<!--用户头像-->
+				<div class="text_center" style="background: url('img/panel_bg.jpg')">
+					<img src="img/user.png">
+					<p id="panel_username" ng-bind="userInfo.username"></p>
+				</div>
+
+				<!--设置列表-->
+				<div>
+					<ul data-role="listview" data-inset="true" data-divider-theme="a">
+						<!--<li data-role="list-divider">个人</li>-->
+						<li>
+							<a href="#" ng-click="toUserInfo()">个人信息</a>
+						</li>
+						<li>
+							<a href="#" ng-click="toMyCollect()">我的收藏</a>
+						</li>
+						<li>
+							<a href="#" ng-click="toAbout()">关于</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+			<!--页头-->
+			<div data-role="header" data-position="fixed">
+				<a href="#mypanel" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user ui-btn-icon-notext"></a>
+				<h1>主页</h1>
+			</div>
+
+			<!--主体-->
+			<div data-role="content" ng-controller="mainCtrl">
+
+				<!--搜索部分，显示搜索结果时消失-->
+				<div id="contentTop">
+					<!--图标-->
+					<div style="width: 100%;margin: 0 auto;text-align: center;padding-top: 3%">
+						<img src="img/logo.png">
+					</div>
+
+					<!--类型-->
+					<select name="qtype" name="type" id="indexTypeSellect">
+						<option value="iv_html">html</option>
+						<option value="iv_css">css</option>
+						<option value="iv_js">javascript</option>
+						<option value="iv_jq">jquery</option>
+						<option value="iv_bootstrap">bootstrap</option>
+						<option value="iv_angular">angular</option>
+						<option value="iv_vue">vue</option>
+						<option value="iv_react">react</option>
+						<option value="iv_other">other</option>
+					</select>
+					<!--搜索框-->
+					<table width="100%">
+						<tr>
+							<td>
+								<input id="indexSearchInput" type="text" data-type="search" placeholder="请输入关键词">
+							</td>
+							<td>
+								<a href="#" class="ui-btn" ng-click="indexSearch()">搜索</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<!--搜索结果-->
+				<div class="Indexlistview">
+
+					<ul data-role="listview">
+
+					</ul>
+
+				</div>
+
+			</div>
+
+			<!--页脚-->
+			<div data-role="footer" data-position="fixed" class="ui-footer-fixed">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#" data-icon="home" style="background: #3388cc" ng-click="toMain()"></a>
+						</li>
+						<li>
+							<a href="#" data-icon="grid" ng-click="toType()"></a>
+						</li>
+						<li>
+							<a href="#" data-icon="edit" ng-click="toEdit()"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+	<script src="tools/jquery-1.11.3.js" type="text/javascript" charset="UTF-8"></script>
+
+	<script src="tools/jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="UTF-8"></script>
+
+	<script src="tools/angular/angular.js"></script>
+	<script src="tools/angular/angular-touch.js"></script>
+
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
